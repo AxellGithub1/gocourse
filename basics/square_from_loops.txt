@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+func main() {
+	rows := 9
+	for i := 1; i <= rows; i++ {
+		fmt.Print("*")
+	}
+	for j := 1; j <= rows-2; j++ {
+		fmt.Print("\n")
+		fmt.Print("*")
+		for l := 1; l <= rows-2; l++ {
+			fmt.Print("-")
+		}
+		fmt.Print("*")
+	}
+	fmt.Print("\n")	
+	for k := 1; k <= rows; k++ {
+		fmt.Print("*")
+	}
+}
