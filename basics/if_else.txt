@@ -49,17 +49,36 @@ func main() {
 	//	fmt.Println("Kid")
 	//}
 
-	fmt.Println("Your age: ")
+	//fmt.Println("Your age: ")
+	//var age int
+	//fmt.Scan(&age)
+	//fmt.Println("Have card? (1: yes, 0: No): ")
+	//var card int
+	//fmt.Scan(&card)
+	//if age >= 18 && card == 1 {
+	//	fmt.Println("You are accepted!")
+	//} else if age >= 18 && card == 0 {
+	//	fmt.Println("Card needed!")
+	//} else {
+	//	fmt.Println("You cant enter!")
+	//}
+
 	var age int
-	fmt.Scan(&age)
-	fmt.Println("Have card? (1: yes, 0: No): ")
 	var card int
-	fmt.Scan(&card)
-	if age >= 18 && card == 1 {
-		fmt.Println("You are accepted!")
-	} else if age >= 18 && card == 0 {
-		fmt.Println("Card needed!")
+	var day int
+	fmt.Println("Enter your age, own card (1: yes, 0: no), todays day (1-7)")
+	fmt.Scan(&age, &card, &day)
+	if age >= 18 {
+		if card == 1 && day == 6 || card == 1 && day == 7 {
+			fmt.Println("You can have coffee with dicond and beer!")
+		} else if card == 1 {
+			fmt.Println("You can buy coffee discount!")
+		} else if day == 6 || day == 7 {
+			fmt.Println("You can have beer!")
+		} else {
+			fmt.Println("You can have any non alcohol drink!")
+		}
 	} else {
-		fmt.Println("You cant enter!")
+		fmt.Println("You can have any non alcohol drink!")
 	}
 }

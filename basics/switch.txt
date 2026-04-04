@@ -1,0 +1,68 @@
+package main
+
+import "fmt"
+
+func main() {
+	//day := 7
+	//switch day {
+	//case 1:
+	//	fmt.Println("Monday")
+	//case 2:
+	//	fmt.Println("Tuesday")
+	//case 3:
+	//	fmt.Println("Wednesday")
+	//case 4:
+	//	fmt.Println("Thursday")
+	//case 5:
+	//	fmt.Println("Friday")
+	//case 6:
+	//	fmt.Println("Saturday")
+	//case 7:
+	//	fmt.Println("Sunday")
+	//default:
+	//	fmt.Println("Invalid")
+	//}
+
+	balance := 1000
+	active := true
+	for active {
+		fmt.Println("\n1. Check balance\n2. Make withdrawl\n3. top up\n4. Exit")
+		var choice int
+		fmt.Scan(&choice)
+		switch choice {
+		case 1:
+			fmt.Printf("Your current balance: %d", balance)
+		case 2:
+			fmt.Println("How much money to withdrawl?")
+			var money int
+			fmt.Scan(&money)
+			if money >= 0 {
+				if money <= balance {
+					balance = balance - money
+					fmt.Printf("Secessfuly withdrawled %d money", money)
+				} else if money >= balance {
+					fmt.Println("You dont have enough money!")
+				}
+			} else {
+				fmt.Println("Invalid!")
+			}
+
+		case 3:
+			var money int
+			fmt.Println("How much money to top up?: ")
+			fmt.Scan(&money)
+			if money >= 0 {
+				balance += money
+			} else {
+				fmt.Println("Invalid!")
+			}
+
+		case 4:
+			fmt.Println("Exiting...")
+			active = false
+		default:
+			fmt.Println("Invalid")
+		}
+
+	}
+}
